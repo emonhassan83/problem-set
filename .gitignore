@@ -3,4 +3,12 @@
 
 # Ignore all .exe files
 *.exe
-.cph
+*.bin
+*.out
+
+# VS Code & Competitive Companion
+.vscode/
+.cph/
+
+# Node modules
+node_modules/
