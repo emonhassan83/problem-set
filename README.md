@@ -1,12 +1,13 @@
-# 🚀 Problem Set: Data Structures, Algorithms & JavaScript Problem Solving
+# 🚀 Problem Set: Data Structures, Algorithms, JavaScript & SQL Solutions
 
 [![Language: C++](https://img.shields.io/badge/Language-C%2B%2B17-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![Language: JavaScript](https://img.shields.io/badge/Language-JavaScript%20ES6+-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Database: PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Topic: DSA](https://img.shields.io/badge/Focus-Data%20Structures%20%26%20Algorithms-orange)](#)
 [![Status: Maintained](https://img.shields.io/badge/Status-Active%20Repository-brightgreen)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-A comprehensive, organized problem-solving repository containing coursework solutions, structured Data Structures & Algorithms (DSA) preparation roadmaps, and practical JavaScript coding challenges. This collection covers implementations, algorithmic techniques, competitive programming problems, and interview preparation materials in **C++** and **JavaScript**.
+A comprehensive, organized problem-solving repository containing coursework solutions, structured Data Structures & Algorithms (DSA) preparation roadmaps, practical JavaScript coding challenges, and relational database SQL problems. This collection covers implementations, algorithmic techniques, competitive programming problems, and interview preparation materials in **C++**, **JavaScript**, and **PostgreSQL (SQL)**.
 
 ---
 
@@ -23,10 +24,14 @@ A comprehensive, organized problem-solving repository containing coursework solu
   - [Problem-Solving Patterns](#problem-solving-patterns)
 - [⚡ 4. JavaScript Problem Solving (`js-problem`)](#4-javascript-problem-solving-js-problem)
   - [Categorized Problem Index (1–36)](#categorized-problem-index-136)
+- [🗄️ 5. SQL & Relational Databases (`sql`)](#️-5-sql--relational-databases-sql)
+  - [Core Database Competencies](#core-database-competencies)
+  - [SQL Script Catalog & Topics](#sql-script-catalog--topics)
 - [⏱️ Time & Space Complexity Cheat Sheet](#️-time--space-complexity-cheat-sheet)
 - [🛠️ How to Compile & Run](#️-how-to-compile--run)
   - [Running C++ Solutions](#running-c-solutions)
   - [Running JavaScript Solutions](#running-javascript-solutions)
+  - [Executing PostgreSQL Scripts](#executing-postgresql-scripts)
 - [👤 Author & Contributions](#-author--contributions)
 
 ---
@@ -59,7 +64,7 @@ problem-set/
 │   ├── 05-Stack/                 # Stack implementations & monotonic patterns
 │   ├── 06-Queue/                 # Queues, circular queues, deques
 │   ├── 07-Hashing/               # Hash maps, frequency tables, sets
-│   ├── 08-Trees/                 # Binary trees, BST, traversals
+│   ├── 08-Trees/                 # Binary trees, BST, LCA, balanced trees
 │   ├── 09-Heap-PriorityQueue/    # Min/Max heaps, priority queues
 │   ├── 10-Graphs/                # Graph traversals, shortest path, MST
 │   ├── 11-Sorting/               # Comparison & non-comparison sorts
@@ -70,6 +75,10 @@ problem-set/
 ├── 📁 js-problem/                # 36+ Core JavaScript problem-solving challenges (ES6+)
 │   ├── 1. arr_filter.js ... 36. arr_small_element.js
 │   └── README.md
+│
+├── 📁 sql/                       # PostgreSQL queries, relational design, triggers & procedures
+│   ├── select.sql, alter.sql, foreignKey.sql, groupBy.sql, join.sql ...
+│   └── functionsProcedures.sql, trigger.sql, views.sql, prectice.sql ...
 │
 └── 📄 README.md                  # Root documentation (this file)
 ```
@@ -225,6 +234,44 @@ Contains 36 practical JavaScript problems and utility implementations focused on
 
 ---
 
+## 🗄️ 5. SQL & Relational Databases (`sql`)
+
+Contains structured **PostgreSQL** query files, database schema design, stored procedures, triggers, indexes, views, and complex analytical queries.
+
+### Core Database Competencies
+- **Data Query Language (DQL):** Multi-conditional filtering (`WHERE`, `AND`, `OR`), sorting (`ORDER BY`), pagination (`LIMIT`, `OFFSET`), pattern matching (`LIKE`, `ILIKE`), range checks (`BETWEEN`, `IN`), null safety (`IS NULL`, `COALESCE`).
+- **Data Definition & Alterations (DDL):** Schema definitions (`CREATE TABLE`), schema evolution (`ALTER TABLE ADD/DROP COLUMN`, `SET DEFAULT`, constraints).
+- **Referential Integrity & Constraints:** Primary keys (`SERIAL`), Foreign keys, Cascading updates/deletions (`ON DELETE CASCADE`, `ON DELETE SET NULL`, `ON DELETE RESTRICT`).
+- **Relational Joins:** `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL JOIN`, and Cartesian product (`CROSS JOIN`).
+- **Aggregations & Grouping:** Group computations with `GROUP BY`, conditional group filtering with `HAVING`, summary functions (`COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`).
+- **Subqueries & Analytical CTEs:** Scalar subqueries, correlated subqueries, set membership subqueries (`IN`, `EXISTS`, `ANY`, `ALL`).
+- **Views & Abstraction:** Virtual tables (`CREATE VIEW`) for encapsulating business logic, report caching, and query simplification.
+- **Stored Functions & Procedures:** Parameterized user-defined functions in SQL and `PL/pgSQL`, procedural logic, automated record modifications.
+- **Event Triggers & Auditing:** Automated row-level triggers (`BEFORE`/`AFTER` on `INSERT`, `UPDATE`, `DELETE`), audit logging tables.
+- **Indexing & Performance Tuning:** B-tree indexes (`CREATE INDEX`), query execution plan inspection via `EXPLAIN ANALYSE`.
+- **Temporal & Date Handling:** `TIMESTAMP`, `TIMESTAMPTZ`, timezone conversions, `INTERVAL`, date arithmetic.
+
+### SQL Script Catalog & Topics
+
+| File | Focus / Subject | Key Commands & Concepts |
+| :--- | :--- | :--- |
+| [`select.sql`](sql/select.sql) | DQL, Filtering & Sorting | `SELECT`, `WHERE`, `ORDER BY`, `LIMIT`, `OFFSET`, `IN`, `BETWEEN`, `LIKE`, `ILIKE`, `DISTINCT` |
+| [`alter.sql`](sql/alter.sql) | Table Alterations & Schema Evolution | `ALTER TABLE`, `ADD COLUMN`, `DROP COLUMN`, `SET DEFAULT`, modifying constraints |
+| [`foreignKey.sql`](sql/foreignKey.sql) | Relational Integrity & Cascades | `FOREIGN KEY`, `REFERENCES`, `ON DELETE CASCADE`, `ON DELETE SET NULL`, `RESTRICT` |
+| [`groupBy.sql`](sql/groupBy.sql) | Aggregations & Group Summaries | `GROUP BY`, `HAVING`, `COUNT()`, `AVG()`, `SUM()`, `MIN()`, `MAX()` |
+| [`join.sql`](sql/join.sql) | Relational Table Joins | `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN`, `FULL OUTER JOIN`, multi-table queries |
+| [`cross.sql`](sql/cross.sql) | Cartesian Product | `CROSS JOIN`, pairing multiple entity tables without explicit conditions |
+| [`date.sql`](sql/date.sql) | Dates, Times & Timezones | `TIMESTAMP`, `TIMESTAMPTZ`, `now()`, date extraction, timezone formatting |
+| [`sub.sql`](sql/sub.sql) | Subqueries & Nested Queries | Scalar subqueries, correlated subqueries, `IN (SELECT ...)`, conditional salary filters |
+| [`views.sql`](sql/views.sql) | Query Views & Abstraction | `CREATE VIEW`, `dept_avg_salary`, security abstraction, query reuse |
+| [`functionsProcedures.sql`](sql/functionsProcedures.sql) | UDFs & Stored Procedures | `CREATE FUNCTION`, `RETURNS`, `LANGUAGE SQL`, `PL/pgSQL`, parameterized deletions |
+| [`trigger.sql`](sql/trigger.sql) | Automated Event Triggers & Auditing | `CREATE TRIGGER`, `BEFORE/AFTER DELETE`, `PL/pgSQL` trigger function, audit logs |
+| [`index.sql`](sql/index.sql) | Indexing & Performance Analysis | `CREATE INDEX`, execution plan analysis (`EXPLAIN ANALYSE`), query speedup |
+| [`prectice.sql`](sql/prectice.sql) | Department & Employee Queries | Relational business analytics, departments, salary brackets, hiring dates |
+| [`prrctice2.sql`](sql/prrctice2.sql) | Orders & Customer Transactions | Customer order analytics, total transactional sums, customer spending trends |
+
+---
+
 ## ⏱️ Time & Space Complexity Cheat Sheet
 
 | Data Structure / Algorithm | Access | Search | Insertion | Deletion | Space |
@@ -286,6 +333,29 @@ node "1. arr_filter.js"
 node "32. binary_search.js"
 node "29. print_fizbuz.js"
 ```
+
+---
+
+### Executing PostgreSQL Scripts
+
+Make sure [PostgreSQL](https://www.postgresql.org/) is installed and running on your system (default port: `5432`).
+
+#### Using `psql` Command-Line Interface:
+```bash
+# Connect to your database and execute a script directly
+psql -U postgres -d ph -f "sql/select.sql"
+
+# Or launch the interactive PostgreSQL shell
+psql -U postgres -d ph
+
+# Inside psql, execute any script with \i:
+\i sql/prectice.sql
+\i sql/trigger.sql
+```
+
+#### Using GUI & Extensions:
+- **VS Code:** Install the *PostgreSQL* or *Database Client* extension and execute queries with `Ctrl + Enter` (or `Cmd + Enter`).
+- **pgAdmin / DBeaver:** Open the desired `.sql` file in the Query Tool, connect to your active database, and click **Execute (F5)**.
 
 ---
 
